@@ -84,17 +84,6 @@
       text-decoration: none;
     }
 
-    .logo-circle {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1.5px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-    }
-
     .logo-text {
       display: flex;
       flex-direction: column;
@@ -678,6 +667,110 @@
       margin-top: 8px;
     }
 
+    /* ═══════════════ BRAND STORY ═══════════════ */
+    .brand-story {
+      background: var(--brown-deep);
+      padding: 80px 0 72px;
+      overflow: hidden;
+    }
+
+    .brand-story .section-label { color: var(--gold); }
+    .brand-story .section-title { color: var(--cream); }
+    .brand-story .section-title em { color: var(--gold); }
+
+    .brand-story-quote {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(20px, 3vw, 28px);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold-pale);
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 48px;
+      line-height: 1.5;
+      opacity: 0.85;
+    }
+
+    .story-timeline {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 max(24px, calc((100vw - 1100px) / 2));
+      scrollbar-width: none;
+    }
+    .story-timeline::-webkit-scrollbar { display: none; }
+
+    .story-chapter {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+      padding: 32px 28px;
+      position: relative;
+      border-left: 1px solid rgba(200, 153, 62, 0.12);
+    }
+    .story-chapter:first-child { border-left: none; }
+
+    .story-chapter-number {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: rgba(200, 153, 62, 0.15);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .story-chapter-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .story-chapter-text {
+      font-size: 14px;
+      color: rgba(250, 246, 240, 0.5);
+      line-height: 1.8;
+    }
+
+    .story-scroll-hint {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 32px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(200, 153, 62, 0.35);
+    }
+    .story-scroll-hint span {
+      display: inline-block;
+      animation: nudge 2s ease-in-out infinite;
+    }
+    @keyframes nudge {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(6px); }
+    }
+
+    .brand-story-closing {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(16px, 2.2vw, 20px);
+      font-weight: 400;
+      color: var(--gold-pale);
+      text-align: center;
+      margin-top: 48px;
+      letter-spacing: 1px;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 640px) {
+      .story-chapter { flex: 0 0 260px; padding: 24px 20px; }
+      .brand-story { padding: 60px 0 56px; }
+    }
+
     /* ═══════════════ TESTIMONIALS ═══════════════ */
     .testimonials-section {
       background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
@@ -1144,15 +1237,14 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="#" class="logo-group">
-        <div class="logo-circle">&#128004;</div>
         <div class="logo-text">
           <div class="logo-name">SUGRA</div>
-          <div class="logo-tagline">The Aroma of Tradition</div>
+          <div class="logo-tagline">Amcha Ghee</div>
         </div>
       </a>
       <nav class="header-nav">
         <a href="#products">Products</a>
-        <a href="#process">Our Process</a>
+        <a href="#story">Our Story</a>
         <a href="#testimonials">Reviews</a>
         <a href="#order" class="header-cta">Order Now</a>
       </nav>
@@ -1218,9 +1310,9 @@
           <div class="product-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
           <div class="product-reviews">456 reviews</div>
           <div class="product-pricing">
-            <span class="product-price-original">&#8377;1,300</span>
-            <span class="product-price">&#8377;1,150</span>
-            <span class="product-discount-badge">12% OFF</span>
+            <span class="product-price-original">&#8377;1,299</span>
+            <span class="product-price">&#8377;1,234</span>
+            <span class="product-discount-badge">5% OFF</span>
           </div>
           <a href="#order" class="product-order-btn">Order Now &#10022;</a>
         </div>
@@ -1233,16 +1325,16 @@
           <div class="product-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
           <div class="product-reviews">389 reviews</div>
           <div class="product-pricing">
-            <span class="product-price-original">&#8377;2,500</span>
-            <span class="product-price">&#8377;2,250</span>
-            <span class="product-discount-badge">10% OFF</span>
+            <span class="product-price-original">&#8377;2,499</span>
+            <span class="product-price">&#8377;2,374</span>
+            <span class="product-discount-badge">5% OFF</span>
           </div>
           <a href="#order" class="product-order-btn">Order Now &#10022;</a>
         </div>
       </div>
 
       <!-- ── PREMIUM COW GHEE LINE ── -->
-      <div class="product-line-heading">&#128004; Premium Cow Ghee</div>
+      <div class="product-line-heading">Premium Cow Ghee</div>
       <p class="product-line-desc">Pure cow ghee, traditionally prepared &#8212; your everyday kitchen essential.</p>
       <div class="products-grid">
         <div class="product-card premium-card">
@@ -1254,8 +1346,8 @@
           <div class="product-reviews">234 reviews</div>
           <div class="product-pricing">
             <span class="product-price-original">&#8377;580</span>
-            <span class="product-price">&#8377;555</span>
-            <span class="product-discount-badge">4% OFF</span>
+            <span class="product-price">&#8377;551</span>
+            <span class="product-discount-badge">5% OFF</span>
           </div>
           <a href="#order" class="product-order-btn">Order Now</a>
         </div>
@@ -1269,7 +1361,7 @@
           <div class="product-reviews">312 reviews</div>
           <div class="product-pricing">
             <span class="product-price-original">&#8377;1,080</span>
-            <span class="product-price">&#8377;1,030</span>
+            <span class="product-price">&#8377;1,026</span>
             <span class="product-discount-badge">5% OFF</span>
           </div>
           <a href="#order" class="product-order-btn">Order Now</a>
@@ -1325,6 +1417,44 @@
       </div>
     </div>
   </div>
+
+  <!-- BRAND STORY -->
+  <section class="brand-story" id="story">
+    <div class="container">
+      <div class="section-label">Our Story</div>
+      <h2 class="section-title">How <em>Sugra</em> Began</h2>
+      <div class="brand-story-quote">"You remember the smell before you remember the taste."</div>
+    </div>
+
+    <div class="story-timeline">
+      <div class="story-chapter">
+        <div class="story-chapter-number">01</div>
+        <div class="story-chapter-title">Aaji's Kitchen</div>
+        <div class="story-chapter-text">Every morning, the same ritual. Aaji would stand at the chulha, slow-stirring ghee in a heavy brass vessel. The whole house would fill with that golden, nutty aroma. As kids, we didn't know what made it special &#8212; we just knew nothing else tasted like it.</div>
+      </div>
+
+      <div class="story-chapter">
+        <div class="story-chapter-number">02</div>
+        <div class="story-chapter-title">Something Changed</div>
+        <div class="story-chapter-text">Years passed. The brass vessel was replaced by store-bought jars. The ghee looked the same but something was off. The aroma was missing. The warmth was gone. Food didn't feel the same anymore. We had accepted convenience and lost something irreplaceable.</div>
+      </div>
+
+      <div class="story-chapter">
+        <div class="story-chapter-number">03</div>
+        <div class="story-chapter-title">The Search</div>
+        <div class="story-chapter-text">We went looking for ghee that tasted like memory. We visited farms, spoke to elders, learned the Bilona method. We found Gir cows grazing freely, their A2 milk churned by hand into curd, then slow-simmered on a wood fire. The smell came back.</div>
+      </div>
+
+      <div class="story-chapter">
+        <div class="story-chapter-number">04</div>
+        <div class="story-chapter-title">Back to That Kitchen</div>
+        <div class="story-chapter-text">Sugra was born to bring that kitchen back &#8212; not just for our family, but for yours. Every jar is crafted the way Aaji would have approved: no shortcuts, no preservatives, no compromise. Just pure ghee, made with patience and love.</div>
+      </div>
+    </div>
+
+    <div class="story-scroll-hint">Swipe to read <span>&#10230;</span></div>
+    <div class="brand-story-closing">A Family Continuing What Aaji Started</div>
+  </section>
 
   <!-- TESTIMONIALS -->
   <section class="section testimonials-section" id="testimonials">
@@ -1409,9 +1539,9 @@
                 <div class="qty-info">
                   <div class="qty-name">A2 Gir Cow Ghee &#8212; 500 ML</div>
                   <div class="qty-price">
-                    <span class="qty-price-original">&#8377;1,300</span>
-                    &#8377;1,150 each
-                    <span class="qty-price-discount">12% OFF</span>
+                    <span class="qty-price-original">&#8377;1,299</span>
+                    &#8377;1,234 each
+                    <span class="qty-price-discount">5% OFF</span>
                   </div>
                 </div>
                 <div class="qty-controls">
@@ -1425,9 +1555,9 @@
                 <div class="qty-info">
                   <div class="qty-name">A2 Gir Cow Ghee &#8212; 1000 ML</div>
                   <div class="qty-price">
-                    <span class="qty-price-original">&#8377;2,500</span>
-                    &#8377;2,250 each
-                    <span class="qty-price-discount">10% OFF</span>
+                    <span class="qty-price-original">&#8377;2,499</span>
+                    &#8377;2,374 each
+                    <span class="qty-price-discount">5% OFF</span>
                   </div>
                 </div>
                 <div class="qty-controls">
@@ -1437,15 +1567,15 @@
                 </div>
               </div>
 
-              <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--brown-medium);font-weight:500;margin:14px 0 6px;padding-left:4px;">&#128004; Premium Cow Ghee</div>
+              <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--brown-medium);font-weight:500;margin:14px 0 6px;padding-left:4px;">Premium Cow Ghee</div>
 
               <div class="qty-row" id="row-pcg500">
                 <div class="qty-info">
                   <div class="qty-name">Premium Cow Ghee &#8212; 500 ML</div>
                   <div class="qty-price">
                     <span class="qty-price-original">&#8377;580</span>
-                    &#8377;555 each
-                    <span class="qty-price-discount">4% OFF</span>
+                    &#8377;551 each
+                    <span class="qty-price-discount">5% OFF</span>
                   </div>
                 </div>
                 <div class="qty-controls">
@@ -1460,7 +1590,7 @@
                   <div class="qty-name">Premium Cow Ghee &#8212; 1000 ML</div>
                   <div class="qty-price">
                     <span class="qty-price-original">&#8377;1,080</span>
-                    &#8377;1,030 each
+                    &#8377;1,026 each
                     <span class="qty-price-discount">5% OFF</span>
                   </div>
                 </div>
@@ -1559,7 +1689,7 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand-name">SUGRA</div>
-          <div class="footer-brand-tagline">The Aroma of Tradition</div>
+          <div class="footer-brand-tagline">Amcha Ghee</div>
           <p class="footer-brand-desc">Premium Cow Ghee and A2 Gir Cow Ghee, handcrafted with love, tradition, and an unwavering commitment to purity.</p>
           <div class="footer-social">
             <a href="https://wa.me/918668467573" title="WhatsApp">&#128172;</a>
@@ -1609,10 +1739,10 @@
 
     // SKU definitions: id → { name, price }
     const SKUS = {
-      'qty-pcg500':  { name: 'Premium Cow Ghee 500ml',  price: 555 },
-      'qty-pcg1000': { name: 'Premium Cow Ghee 1000ml', price: 1030 },
-      'qty-a2g500':  { name: 'A2 Gir Cow Ghee 500ml',  price: 1150 },
-      'qty-a2g1000': { name: 'A2 Gir Cow Ghee 1000ml', price: 2250 },
+      'qty-pcg500':  { name: 'Premium Cow Ghee 500ml',  price: 551 },
+      'qty-pcg1000': { name: 'Premium Cow Ghee 1000ml', price: 1026 },
+      'qty-a2g500':  { name: 'A2 Gir Cow Ghee 500ml',  price: 1234 },
+      'qty-a2g1000': { name: 'A2 Gir Cow Ghee 1000ml', price: 2374 },
     };
 
     function changeQty(id, delta) {
