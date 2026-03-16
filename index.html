@@ -12,7 +12,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -602,17 +602,20 @@
     }
 
     .process-icon {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      border: 1px solid rgba(200, 153, 62, 0.25);
-      background: rgba(200, 153, 62, 0.04);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
+      border: 1.5px solid rgba(200, 153, 62, 0.3);
+      overflow: hidden;
       margin: 10px auto 24px;
       transition: transform 0.3s;
+    }
+
+    .process-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
     }
 
     .process-step:hover .process-icon { transform: scale(1.1); }
@@ -769,6 +772,103 @@
     @media (max-width: 640px) {
       .story-chapter { flex: 0 0 260px; padding: 24px 20px; }
       .brand-story { padding: 60px 0 56px; }
+    }
+
+    /* ═══════════════ SCALE QUOTE ═══════════════ */
+    .scale-quote {
+      background: var(--brown-deep);
+      padding: clamp(80px, 12vw, 140px) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scale-quote::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(rgba(200,153,62,0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .scale-quote-mark {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 120px;
+      color: var(--gold);
+      opacity: 0.12;
+      line-height: 0.5;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .scale-quote-text {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.2;
+      max-width: 700px;
+      margin: 0 auto 24px;
+      position: relative;
+    }
+
+    .scale-quote-text em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .scale-quote-desc {
+      font-size: 15px;
+      line-height: 1.85;
+      color: rgba(250, 246, 240, 0.45);
+      max-width: 520px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* ═══════════════ HINDI CTA ═══════════════ */
+    .hindi-cta {
+      background: var(--cream);
+      padding: clamp(60px, 10vw, 100px) 0;
+      text-align: center;
+    }
+
+    .hindi-cta-text {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 500;
+      color: var(--gold);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .hindi-cta-subtitle {
+      font-size: 13px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .hindi-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--white-warm);
+      padding: 18px 48px;
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .hindi-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200, 153, 62, 0.3);
     }
 
     /* ═══════════════ TESTIMONIALS ═══════════════ */
@@ -1311,8 +1411,8 @@
           <div class="product-reviews">456 reviews</div>
           <div class="product-pricing">
             <span class="product-price-original">&#8377;1,299</span>
-            <span class="product-price">&#8377;1,234</span>
-            <span class="product-discount-badge">5% OFF</span>
+            <span class="product-price">&#8377;1,208</span>
+            <span class="product-discount-badge">7% OFF</span>
           </div>
           <a href="#order" class="product-order-btn">Order Now &#10022;</a>
         </div>
@@ -1326,8 +1426,8 @@
           <div class="product-reviews">389 reviews</div>
           <div class="product-pricing">
             <span class="product-price-original">&#8377;2,499</span>
-            <span class="product-price">&#8377;2,374</span>
-            <span class="product-discount-badge">5% OFF</span>
+            <span class="product-price">&#8377;2,324</span>
+            <span class="product-discount-badge">7% OFF</span>
           </div>
           <a href="#order" class="product-order-btn">Order Now &#10022;</a>
         </div>
@@ -1346,8 +1446,8 @@
           <div class="product-reviews">234 reviews</div>
           <div class="product-pricing">
             <span class="product-price-original">&#8377;580</span>
-            <span class="product-price">&#8377;551</span>
-            <span class="product-discount-badge">5% OFF</span>
+            <span class="product-price">&#8377;539</span>
+            <span class="product-discount-badge">7% OFF</span>
           </div>
           <a href="#order" class="product-order-btn">Order Now</a>
         </div>
@@ -1361,8 +1461,8 @@
           <div class="product-reviews">312 reviews</div>
           <div class="product-pricing">
             <span class="product-price-original">&#8377;1,080</span>
-            <span class="product-price">&#8377;1,026</span>
-            <span class="product-discount-badge">5% OFF</span>
+            <span class="product-price">&#8377;1,004</span>
+            <span class="product-discount-badge">7% OFF</span>
           </div>
           <a href="#order" class="product-order-btn">Order Now</a>
         </div>
@@ -1380,25 +1480,25 @@
       <div class="process-grid">
         <div class="process-step">
           <div class="process-num">01</div>
-          <div class="process-icon">&#128004;</div>
+          <div class="process-icon"><img src="images/gir_cow_sacred.png" alt="Gir Cow" loading="lazy"></div>
           <div class="process-title">Sacred Sourcing</div>
           <div class="process-desc">Milk from free-grazing indigenous Gir cows, raised with love on lush green pastures.</div>
         </div>
         <div class="process-step">
           <div class="process-num">02</div>
-          <div class="process-icon">&#129371;</div>
+          <div class="process-icon"><img src="images/natural_curdling.png" alt="Natural Curdling" loading="lazy"></div>
           <div class="process-title">Natural Curdling</div>
           <div class="process-desc">Whole milk set into curd naturally, preserving all precious A2 beta-casein proteins.</div>
         </div>
         <div class="process-step">
           <div class="process-num">03</div>
-          <div class="process-icon">&#129717;</div>
+          <div class="process-icon"><img src="images/bilona_churning.png" alt="Bilona Churning" loading="lazy"></div>
           <div class="process-title">Bilona Churning</div>
           <div class="process-desc">Hand-churned in traditional wooden vessels &#8212; the ancient Vedic way of making butter.</div>
         </div>
         <div class="process-step">
           <div class="process-num">04</div>
-          <div class="process-icon">&#10024;</div>
+          <div class="process-icon"><img src="images/slow_simmered.png" alt="Slow Simmered" loading="lazy"></div>
           <div class="process-title">Slow Simmered</div>
           <div class="process-desc">Butter slow-cooked on low flame until golden, releasing the rich divine aroma of pure ghee.</div>
         </div>
@@ -1410,7 +1510,7 @@
   <div class="numbers-strip">
     <div class="container">
       <div class="numbers-grid">
-        <div><div class="number-item-value">500+</div><div class="number-item-label">Happy Families</div></div>
+        <div><div class="number-item-value">100+</div><div class="number-item-label">Happy Families</div></div>
         <div><div class="number-item-value">100%</div><div class="number-item-label">Pure &amp; Natural</div></div>
         <div><div class="number-item-value">4.8/5</div><div class="number-item-label">Average Rating</div></div>
         <div><div class="number-item-value">5000+</div><div class="number-item-label">Years of Heritage</div></div>
@@ -1505,6 +1605,24 @@
     </div>
   </section>
 
+  <!-- SCALE QUOTE -->
+  <section class="scale-quote">
+    <div class="container">
+      <div class="scale-quote-mark">&#8220;</div>
+      <div class="scale-quote-text">They have the means to scale.<br><em>They won't.</em></div>
+      <p class="scale-quote-desc">Small batches. One person's attention on every jar. The moment a batch becomes too large to watch, judge, smell, and feel with your own senses &#8212; it stops being SUGRA.</p>
+    </div>
+  </section>
+
+  <!-- HINDI CTA -->
+  <section class="hindi-cta">
+    <div class="container">
+      <div class="hindi-cta-text">&#2310;&#2350;&#2330;&#2306; &#2328;&#2368;.</div>
+      <div class="hindi-cta-subtitle">Amcha Ghee.</div>
+      <a href="#order" class="hindi-cta-btn">Bring It Home &#10230;</a>
+    </div>
+  </section>
+
   <!-- ORDER FORM -->
   <section class="section order-section" id="order">
     <div class="container">
@@ -1540,8 +1658,8 @@
                   <div class="qty-name">A2 Gir Cow Ghee &#8212; 500 ML</div>
                   <div class="qty-price">
                     <span class="qty-price-original">&#8377;1,299</span>
-                    &#8377;1,234 each
-                    <span class="qty-price-discount">5% OFF</span>
+                    &#8377;1,208 each
+                    <span class="qty-price-discount">7% OFF</span>
                   </div>
                 </div>
                 <div class="qty-controls">
@@ -1556,8 +1674,8 @@
                   <div class="qty-name">A2 Gir Cow Ghee &#8212; 1000 ML</div>
                   <div class="qty-price">
                     <span class="qty-price-original">&#8377;2,499</span>
-                    &#8377;2,374 each
-                    <span class="qty-price-discount">5% OFF</span>
+                    &#8377;2,324 each
+                    <span class="qty-price-discount">7% OFF</span>
                   </div>
                 </div>
                 <div class="qty-controls">
@@ -1574,8 +1692,8 @@
                   <div class="qty-name">Premium Cow Ghee &#8212; 500 ML</div>
                   <div class="qty-price">
                     <span class="qty-price-original">&#8377;580</span>
-                    &#8377;551 each
-                    <span class="qty-price-discount">5% OFF</span>
+                    &#8377;539 each
+                    <span class="qty-price-discount">7% OFF</span>
                   </div>
                 </div>
                 <div class="qty-controls">
@@ -1590,8 +1708,8 @@
                   <div class="qty-name">Premium Cow Ghee &#8212; 1000 ML</div>
                   <div class="qty-price">
                     <span class="qty-price-original">&#8377;1,080</span>
-                    &#8377;1,026 each
-                    <span class="qty-price-discount">5% OFF</span>
+                    &#8377;1,004 each
+                    <span class="qty-price-discount">7% OFF</span>
                   </div>
                 </div>
                 <div class="qty-controls">
@@ -1739,10 +1857,10 @@
 
     // SKU definitions: id → { name, price }
     const SKUS = {
-      'qty-pcg500':  { name: 'Premium Cow Ghee 500ml',  price: 551 },
-      'qty-pcg1000': { name: 'Premium Cow Ghee 1000ml', price: 1026 },
-      'qty-a2g500':  { name: 'A2 Gir Cow Ghee 500ml',  price: 1234 },
-      'qty-a2g1000': { name: 'A2 Gir Cow Ghee 1000ml', price: 2374 },
+      'qty-pcg500':  { name: 'Premium Cow Ghee 500ml',  price: 539 },
+      'qty-pcg1000': { name: 'Premium Cow Ghee 1000ml', price: 1004 },
+      'qty-a2g500':  { name: 'A2 Gir Cow Ghee 500ml',  price: 1208 },
+      'qty-a2g1000': { name: 'A2 Gir Cow Ghee 1000ml', price: 2324 },
     };
 
     function changeQty(id, delta) {
